@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Malayalam Declension Helper</title>
+    <script type="application/javascript">
+        function submitForm(e)
+        {
+            e.preventDefault();
+            var textInput = document.querySelector("input[type=text]");
+            console.log("textInput = %o", textInput);
+            var noun = textInput.value;
+            console.log("noun = %s", noun);
+            var newLocation = window.location.href;
+            console.log("Before appending the noun: newLocation = %s", newLocation);
+            newLocation += noun;
+            console.log("After appending the noun: newLocation = %s", newLocation);
+            window.location.replace(newLocation);
+        }
+
+        function onReady(e)
+        {
+            e.preventDefault();
+            var submitButton = document.querySelector("input[type=submit");
+            submitButton.addEventListener("click", submitForm);
+        }
+
+        window.addEventListener("DOMContentLoaded", onReady);
+    </script>
+</head>
+<body>
+    <form>
+        {% csrf_token %}
+        Enter the noun to be declined&#58; <input type="text">
+        <input type="submit" value="Decline" />
+    </form>
+</body>
+</html>
