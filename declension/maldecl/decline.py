@@ -10,18 +10,23 @@ def decline(noun):
     # Pick a generator based on the noun's shape #
 
     if isANStem(noun):
-        decliners["Singular"] = declension.maldecl.singular.AMStem()
-        decliners["Plural"] = declension.maldecl.plural.ANStem()
+        decliners["Singular"] = declension.maldecl.singular.AMStem
+        decliners["Plural"] = declension.maldecl.plural.ANStem
 
     elif isAMStem(noun):
-        decliners["Singular"] = declension.maldecl.singular.AMStem()
-        decliners["Plural"] = declension.maldecl.plural.AMStem()
+        decliners["Singular"] = declension.maldecl.singular.AMStem
+        decliners["Plural"] = declension.maldecl.plural.AMStem
 
     elif isRuhStem(noun):
+        decliners["Singular"] = declension.maldecl.singular.RuhStem
+        decliners["Plural"] = declension.maldecl.plural.RuhStem
 
     elif isDuhStem(noun):
+        decliners["Singular"] = declension.maldecl.singular.DuhStem
+        decliners["Plural"] = declension.maldecl.plural.DuhStem
 
-    else:
+    else: # Must be a vowel stem
+        decliners["Singular"] = declension.maldecl.singular.VowelStem
 
 def isANStem(noun):
     return noun[:-1] == 0x0d7b

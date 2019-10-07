@@ -21,6 +21,3 @@ class VowelStem(DeclensionGenerator):
 
     def genInstrumental(self, noun):
         return noun + "\u0d2f\u0d3e\u0d7d"
-
-    def genSociative(self, noun):
-        return noun + "\u0d2f\u0d4b\u0d1f\u0d4d"
