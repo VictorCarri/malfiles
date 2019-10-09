@@ -1,4 +1,4 @@
-from declension.maldecl import DeclensionGenerator
+from declension.maldecl.DeclensionGenerator import DeclensionGenerator
 
 class ANStem(DeclensionGenerator):
     def genNominative(self, noun):

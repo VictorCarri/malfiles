@@ -1,4 +1,4 @@
-from declension.maldecl import DeclensionGenerator
+from declension.maldecl.DeclensionGenerator import DeclensionGenerator
 
 class VowelStem(DeclensionGenerator):
     def genNominative(self, noun):

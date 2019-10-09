@@ -1,9 +1,6 @@
-from declension.maldecl import DeclensionGenerator
+from declension.maldecl.DeclensionGenerator import DeclensionGenerator
 
 class DuhStem(DeclensionGenerator):
-    def __init__(self):
-        pass
-
     def genAccusative(self, noun):
         return noun.replace(u"\u0d1f\u0d4d", u"\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d46")
 
