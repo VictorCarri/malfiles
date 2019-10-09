@@ -2,6 +2,7 @@ import declension.maldecl.singular
 import declension.maldecl.plural
 
 def decline(noun):
+    # The pair of generators which we'll use
     decliners = {
         "Singular": None,
         "Plural": None
@@ -27,6 +28,14 @@ def decline(noun):
 
     else: # Must be a vowel stem
         decliners["Singular"] = declension.maldecl.singular.VowelStem
+        decliners["Plural"] = declension.maldecl.plural.VowelStem
+
+    declensions = {
+        "Singular": decliners["Singular"].decline(noun),
+        "Plural": decliners["Plural"].decline(noun)
+    }
+    
+    return declensions
 
 def isANStem(noun):
     return noun[:-1] == 0x0d7b
