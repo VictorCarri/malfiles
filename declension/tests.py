@@ -1,5 +1,7 @@
 from django.test import TestCase
+
 from declension.maldecl.decline import decline
+
 
 class AMStemTests(TestCase):
     def setUp(self):
@@ -8,3 +10,8 @@ class AMStemTests(TestCase):
     def test_singular_nominative(self):
         declensions = decline(self.noun)
         self.assertEqual(declensions["Singular"]["Nominative"], self.noun, "The generated nominative singular should be the same as the given noun.")
+
+    def test_singular_accusative(self):
+        declensions = decline(self.noun)
+        self.assertEqual(declensions["Singular"]["Nominative"], self.noun,
+                         "The generated nominative singular should be the same as the given noun.")
