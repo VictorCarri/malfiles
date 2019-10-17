@@ -30,3 +30,13 @@ class AMStemTests(TestCase):
         declensions = decline(self.noun)
         expectedVal = "\u0d05\u0d24\u0d40\u0d24\u0d24\u0d4d\u0d24\u0d3f\u0d7d" # atiitattil
         self.assertEqual(declensions["Singular"]["Locative"], expectedVal, "The generated locative singular should be {0}, but {1} was returned.".format(expectedVal, declensions["Singular"]["Locative"]))
+
+    def test_singular_sociative(self):
+        declensions = decline(self.noun)
+        expectedVal = "\u0d05\u0d24\u0d40\u0d24\u0d24\u0d4d\u0d24\u0d3f\u0d28\u0d4b\u0d1f\u0d4d" # atiitattinooDuh
+        self.assertEqual(declensions["Singular"]["Sociative"], expectedVal, "The generated sociative singular should be {0}, but {1} was returned.".format(expectedVal, declensions["Singular"]["Sociative"]))
+
+    def test_singular_instrumental(self):
+        declensions = decline(self.noun)
+        expectedVal = "\u0d05\u0d24\u0d40\u0d24\u0d24\u0d4d\u0d24\u0d3f\u0d28\u0d3e\u0d7d" # atiitattinaal
+        self.assertEqual(declensions["Singular"]["Instrumental"], expectedVal, "The generated instrumental singular should be {0}, but {1} was returned.".format(expectedVal, declensions["Singular"]["Instrumental"]))
