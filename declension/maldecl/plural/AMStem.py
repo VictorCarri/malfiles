@@ -1,6 +1,6 @@
-from declension.maldecl.DeclensionGenerator import DeclensionGenerator
+from declension.maldecl.SingularDeclensionGenerator import SingularDeclensionGenerator
 
-class AMStem(DeclensionGenerator):
+class AMStem(SingularDeclensionGenerator):
     def genNominative(self, noun):
         return noun.replace(u"\u0d02", u"\u0d19\u0d4d\u0d19\u0d7e")
 

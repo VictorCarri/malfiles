@@ -79,3 +79,8 @@ class ANStemTests(TestCase):
         declensions = decline(self.noun)
         expectedVal = "\u0d05\u0d35\u0d28\u0d3e\u0d7d" # /aʋan̪aːl/
         self.assertEqual(declensions["Singular"]["Instrumental"], expectedVal, "Expected {0} as the singular instrumental form, but received {1} instead".format(expectedVal, declensions["Singular"]["Instrumental"]))
+
+    def testPluralNominative(self):
+        declensions = decline(self.noun)
+        expectedVal = "\u0d05\u0d35\u0d7c" # /aʋaɾ/
+        self.assertEqual(declensions["Plural"]["Nominative"], expectedVal, "Expected {0} as the plural nominative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Nominative"]))

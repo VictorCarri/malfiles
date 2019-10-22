@@ -1,4 +1,4 @@
-class DeclensionGenerator:
+class SingularDeclensionGenerator:
     def genNominative(self, noun):
         return "Unknown nominative"
 

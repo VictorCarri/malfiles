@@ -1,7 +1,8 @@
-from declension.maldecl.DeclensionGenerator import DeclensionGenerator
+from declension.maldecl.SingularDeclensionGenerator import SingularDeclensionGenerator
 
-class ANStem(DeclensionGenerator):
+class ANStem(SingularDeclensionGenerator):
     def genNominative(self, noun):
+        # Replace chillu n with chillu r
         return noun.replace(u"\u0d6f", u"\u0d7c")
 
     def genAccusative(self, noun):
