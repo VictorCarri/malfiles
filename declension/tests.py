@@ -66,6 +66,16 @@ class AMStemTests(TestCase):
         exVal = "\u0d05\u0d24\u0d40\u0d24\u0d19\u0d4d\u0d19\u0d33\u0d3f\u0d7d" # /at̪iːt̪aŋːaɭil/
         self.assertEqual(declensions["Plural"]["Locative"], exVal, "Expected {0} as locative plural, but received {1}".format(exVal, declensions["Plural"]["Locative"]))
 
+    def testPluralSociative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d05\u0d24\u0d40\u0d24\u0d19\u0d4d\u0d19\u0d33\u0d4b\u0d1f\u0d4d" # /at̪iːt̪aŋːaɭoːʈə/
+        self.assertEqual(declensions["Plural"]["Sociative"], exVal, "Expected {0} as sociative plural, but received {1}".format(exVal, declensions["Plural"]["Sociative"]))
+
+    def testPluralInstrumental(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d05\u0d24\u0d40\u0d24\u0d19\u0d4d\u0d19\u0d33\u0d3e\u0d7d" # /at̪iːt̪aŋːaɭaːl/
+        self.assertEqual(declensions["Plural"]["Instrumental"], exVal, "Expected {0} as instrumental plural, but received {1}".format(exVal, declensions["Plural"]["Instrumental"]))
+
 class ANStemTests(TestCase):
     def setUp(self):
         self.noun = "\u0d05\u0d35\u0d7b" # avan
