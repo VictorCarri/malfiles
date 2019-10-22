@@ -45,3 +45,12 @@ class ANStemTests(TestCase):
 
     def setUp(self) -> None:
         self.noun = "\u0d05\u0d35\u0d7b" # avan
+
+    def testSingularNominative(self):
+        declensions = decline(self.noun)
+        self.assertEqual(declensions["Singular"]["Nominative"], self.noun, "The an-stem noun should be the same as its nominative form.")
+
+    def testSingularAccusative(self):
+        declensions = decline(self.noun)
+        expectedVal = "\u0d05\u0d35\u0d28\u0d46" # avane
+        self.assertEqual(declensions["Singular"]["Accusative"], expectedVal, "Expected {0} as the singular accusative form, but received {1}".format(expectedVal, declensions["Singular"]["Accusative"]))

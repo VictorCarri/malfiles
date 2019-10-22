@@ -3,6 +3,7 @@ from declension.maldecl.DeclensionGenerator import DeclensionGenerator
 class ANStem(DeclensionGenerator):
     def genAccusative(self, noun):
         # Replace trailing chillu with -ne
+        #print("ANStem.genAccusative: character to replace is \"\u0d7b\", replacement is \"\u0d28\u0d46\"\n\tNoun with replacements is {0}".format(noun.replace(u"\u0d7b", u"\u0d28\u0d46")))
         return noun.replace(u"\u0d7b", u"\u0d28\u0d46")
 
     def genGenitive(self, noun):

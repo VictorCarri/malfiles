@@ -13,7 +13,7 @@ def decline(noun):
     #print("decliner: noun = {0}\n\tisANStem = {1}\n\tisAMStem = {2}\n\tisRuhStem = {3}\n\tisDuhStem = {4}".format(noun, isANStem(noun), isAMStem(noun), isRuhStem(noun), isDuhStem(noun)))
 
     if isANStem(noun):
-        decliners["Singular"] = declension.maldecl.singular.AMStem.AMStem()
+        decliners["Singular"] = declension.maldecl.singular.ANStem.ANStem()
         decliners["Plural"] = declension.maldecl.plural.ANStem.ANStem()
 
     elif isAMStem(noun):
