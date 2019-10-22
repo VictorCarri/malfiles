@@ -14,7 +14,7 @@ class AMStem(DeclensionGenerator):
 
     def genDative(self, noun):
         # Replace trailing -am with -ngngaLkkuh
-        return noun.replace(u"\u0d02", u"\u0d19\u0d4d\u0d19\u0d7e\u0d15\u0d4d\u0d15")
+        return noun.replace(u"\u0d02", u"\u0d19\u0d4d\u0d19\u0d7e\u0d15\u0d4d\u0d15\u0d4d")
 
     def genLocative(self, noun):
         # Replace trailing -am with -ngngaLil

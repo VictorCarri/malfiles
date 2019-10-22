@@ -46,6 +46,26 @@ class AMStemTests(TestCase):
         expectedVal = "\u0d05\u0d24\u0d40\u0d24\u0d19\u0d4d\u0d19\u0d7e" # /at̪iːt̪aŋːaɭ/
         self.assertEqual(declensions["Plural"]["Nominative"], expectedVal, "Expected {0} as nominative plural, but received {1}".format(expectedVal, declensions["Plural"]["Nominative"]))
 
+    def testPluralAccusative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d05\u0d24\u0d40\u0d24\u0d19\u0d4d\u0d19\u0d33\u0d46" # /at̪iːt̪aŋːaɭe/
+        self.assertEqual(declensions["Plural"]["Accusative"], exVal, "Expected {0} as accusative plural, but received {1}".format(exVal, declensions["Plural"]["Accusative"]))
+
+    def testPluralGenitive(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d05\u0d24\u0d40\u0d24\u0d19\u0d4d\u0d19\u0d33\u0d41\u0d1f\u0d46" # /at̪iːt̪aŋːaɭuʈe/
+        self.assertEqual(declensions["Plural"]["Genitive"], exVal, "Expected {0} as genitive plural, but received {1}".format(exVal, declensions["Plural"]["Genitive"]))
+
+    def testPluralDative(self):
+        declensions = decline(self.noun)
+        expectedVal = "\u0d05\u0d24\u0d40\u0d24\u0d19\u0d4d\u0d19\u0d7e\u0d15\u0d4d\u0d15\u0d4d" # /at̪iːt̪aŋːaɭkːə/
+        self.assertEqual(declensions["Plural"]["Dative"], expectedVal, "Expected {0} as dative plural, but received {1}".format(expectedVal, declensions["Plural"]["Dative"]))
+
+    def testPluralLocative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d05\u0d24\u0d40\u0d24\u0d19\u0d4d\u0d19\u0d33\u0d3f\u0d7d" # /at̪iːt̪aŋːaɭil/
+        self.assertEqual(declensions["Plural"]["Locative"], exVal, "Expected {0} as locative plural, but received {1}".format(exVal, declensions["Plural"]["Locative"]))
+
 class ANStemTests(TestCase):
     def setUp(self):
         self.noun = "\u0d05\u0d35\u0d7b" # avan
