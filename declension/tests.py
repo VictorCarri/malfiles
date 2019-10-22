@@ -128,3 +128,8 @@ class ANStemTests(TestCase):
         declensions = decline(self.noun)
         expectedVal = "\u0d05\u0d35\u0d30\u0d41\u0d1f\u0d46" # /aʋaɾuʈe/
         self.assertEqual(declensions["Plural"]["Genitive"], expectedVal, "Expected {0} as the plural genitive form, but received {1} instead".format(expectedVal, declensions["Plural"]["Genitive"]))
+
+    def testPluralDative(self):
+        declensions = decline(self.noun)
+        expectedVal = "\u0d05\u0d35\u0d7c\u0d15\u0d4d\u0d15\u0d4d" # /aʋaɾkːə/
+        self.assertEqual(declensions["Plural"]["Dative"], expectedVal, "Expected {0} as the plural dative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Dative"]))
