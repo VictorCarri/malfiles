@@ -138,3 +138,8 @@ class ANStemTests(TestCase):
         declensions = decline(self.noun)
         expectedVal = "\u0d05\u0d35\u0d30\u0d3f\u0d7d" # /aʋaɾil/
         self.assertEqual(declensions["Plural"]["Locative"], expectedVal, "Expected {0} as the plural locative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Locative"]))
+
+    def testPluralInstrumental(self):
+        declensions = decline(self.noun)
+        expectedVal = "\u0d05\u0d35\u0d30\u0d3e\u0d7d" # /aʋaɾaːl/
+        self.assertEqual(declensions["Plural"]["Instrumental"], expectedVal, "Expected {0} as the plural instrumental form, but received {1} instead".format(expectedVal, declensions["Plural"]["Instrumental"]))
