@@ -96,50 +96,55 @@ class ANStemTests(TestCase):
 
     def testSingularDative(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d28\u0d4d\u0d28\u0d4d"  # /aʋanːə/
-        self.assertEqual(declensions["Singular"]["Dative"], expectedVal, "Expected {0} as the singular dative form, but received {1} instead".format(expectedVal, declensions["Singular"]["Dative"]))
+        expectedVal = u"\u0d05\u0d35\u0d28\u0d4d\u0d28\u0d4d"  # /aʋanːə/
+        self.assertEqual(declensions["Singular"]["Dative"], expectedVal, u"Expected {0} as the singular dative form, but received {1} instead".format(expectedVal, declensions["Singular"]["Dative"]))
 
     def testSingularLocative(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d28\u0d3f\u0d7d" # /aʋan̪il/
-        self.assertEqual(declensions["Singular"]["Locative"], expectedVal, "Expected {0} as the singular locative form, but received {1} instead".format(expectedVal, declensions["Singular"]["Locative"]))
+        expectedVal = u"\u0d05\u0d35\u0d28\u0d3f\u0d7d" # /aʋan̪il/
+        self.assertEqual(declensions["Singular"]["Locative"], expectedVal, u"Expected {0} as the singular locative form, but received {1} instead".format(expectedVal, declensions["Singular"]["Locative"]))
 
     def testSingularSociative(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d28\u0d4b\u0d1f\u0d4d" # /aʋan̪oːʈə/
-        self.assertEqual(declensions["Singular"]["Sociative"], expectedVal, "Expected {0} as the singular sociative form, but received {1} instead".format(expectedVal, declensions["Singular"]["Sociative"]))
+        expectedVal = u"\u0d05\u0d35\u0d28\u0d4b\u0d1f\u0d4d" # /aʋan̪oːʈə/
+        self.assertEqual(declensions["Singular"]["Sociative"], expectedVal, u"Expected {0} as the singular sociative form, but received {1} instead".format(expectedVal, declensions["Singular"]["Sociative"]))
 
     def testSingularInstrumental(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d28\u0d3e\u0d7d" # /aʋan̪aːl/
-        self.assertEqual(declensions["Singular"]["Instrumental"], expectedVal, "Expected {0} as the singular instrumental form, but received {1} instead".format(expectedVal, declensions["Singular"]["Instrumental"]))
+        expectedVal = u"\u0d05\u0d35\u0d28\u0d3e\u0d7d" # /aʋan̪aːl/
+        self.assertEqual(declensions["Singular"]["Instrumental"], expectedVal, u"Expected {0} as the singular instrumental form, but received {1} instead".format(expectedVal, declensions["Singular"]["Instrumental"]))
 
     def testPluralNominative(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d7c" # /aʋaɾ/
-        self.assertEqual(declensions["Plural"]["Nominative"], expectedVal, "Expected {0} as the plural nominative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Nominative"]))
+        expectedVal = u"\u0d05\u0d35\u0d7c" # /aʋaɾ/
+        self.assertEqual(declensions["Plural"]["Nominative"], expectedVal, u"Expected {0} as the plural nominative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Nominative"]))
 
     def testPluralAccusative(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d30\u0d46" # /aʋaɾe/
-        self.assertEqual(declensions["Plural"]["Accusative"], expectedVal, "Expected {0} as the plural accusative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Accusative"]))
+        expectedVal = u"\u0d05\u0d35\u0d30\u0d46" # /aʋaɾe/
+        self.assertEqual(declensions["Plural"]["Accusative"], expectedVal, u"Expected {0} as the plural accusative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Accusative"]))
 
     def testPluralGenitive(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d30\u0d41\u0d1f\u0d46" # /aʋaɾuʈe/
+        expectedVal = u"\u0d05\u0d35\u0d30\u0d41\u0d1f\u0d46" # /aʋaɾuʈe/
         self.assertEqual(declensions["Plural"]["Genitive"], expectedVal, "Expected {0} as the plural genitive form, but received {1} instead".format(expectedVal, declensions["Plural"]["Genitive"]))
 
     def testPluralDative(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d7c\u0d15\u0d4d\u0d15\u0d4d" # /aʋaɾkːə/
-        self.assertEqual(declensions["Plural"]["Dative"], expectedVal, "Expected {0} as the plural dative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Dative"]))
+        expectedVal = u"\u0d05\u0d35\u0d7c\u0d15\u0d4d\u0d15\u0d4d" # /aʋaɾkːə/
+        self.assertEqual(declensions["Plural"]["Dative"], expectedVal, u"Expected {0} as the plural dative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Dative"]))
 
     def testPluralLocative(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d30\u0d3f\u0d7d" # /aʋaɾil/
-        self.assertEqual(declensions["Plural"]["Locative"], expectedVal, "Expected {0} as the plural locative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Locative"]))
+        expectedVal = u"\u0d05\u0d35\u0d30\u0d3f\u0d7d" # /aʋaɾil/
+        self.assertEqual(declensions["Plural"]["Locative"], expectedVal, u"Expected {0} as the plural locative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Locative"]))
+
+    def testPluralSociative(self):
+        declensions = decline(self.noun)
+        expectedVal = u"\u0d05\u0d35\u0d30\u0d4b\u0d1f\u0d4d" # /aʋaɾoːʈə/
+        self.assertEqual(declensions["Plural"]["Sociative"], expectedVal, u"Expected {0} as the plural sociative form, but received {1} instead".format(expectedVal, declensions["Plural"]["Sociative"]))
 
     def testPluralInstrumental(self):
         declensions = decline(self.noun)
-        expectedVal = "\u0d05\u0d35\u0d30\u0d3e\u0d7d" # /aʋaɾaːl/
+        expectedVal = u"\u0d05\u0d35\u0d30\u0d3e\u0d7d" # /aʋaɾaːl/
         self.assertEqual(declensions["Plural"]["Instrumental"], expectedVal, "Expected {0} as the plural instrumental form, but received {1} instead".format(expectedVal, declensions["Plural"]["Instrumental"]))

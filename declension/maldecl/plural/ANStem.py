@@ -26,3 +26,7 @@ class ANStem(DeclensionGenerator):
     def genInstrumental(self, noun):
         # Replace chillu with -raal
         return noun.replace(u"\u0d7b", u"\u0d30\u0d3e\u0d7d")
+
+    def genSociative(self, noun):
+        # Replace chillu with -rooDuh
+        return noun.replace(u"\u0d7b", u"\u0d30\u0d4b\u0d1f\u0d4d")
