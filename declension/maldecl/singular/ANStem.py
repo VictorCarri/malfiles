@@ -23,4 +23,4 @@ class ANStem(DeclensionGenerator):
         return noun.replace(u"\u0d7b", u"\u0d28\u0d3e\u0d7d")
 
     def genSociative(self, noun):
-        return noun.replace(u"\u0d7b", u"\u0d28\u0d3e\u0d7d")
+        return noun.replace(u"\u0d7b", u"\u0d28\u0d4b\u0d1f\u0d4d")
