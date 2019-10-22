@@ -1,6 +1,6 @@
-from declension.maldecl.SingularDeclensionGenerator import SingularDeclensionGenerator
+from declension.maldecl.DeclensionGenerator import DeclensionGenerator
 
-class VowelStem(SingularDeclensionGenerator):
+class VowelStem(DeclensionGenerator):
     def genAccusative(self, noun):
         return noun + "\u0d2f\u0d46"
 

@@ -1,1 +1,1 @@
-from . import SingularDeclensionGenerator, decline
+from . import DeclensionGenerator, decline

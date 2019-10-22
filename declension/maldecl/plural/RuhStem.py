@@ -1,6 +1,6 @@
-from declension.maldecl.SingularDeclensionGenerator import SingularDeclensionGenerator
+from declension.maldecl.DeclensionGenerator import DeclensionGenerator
 
-class RuhStem(SingularDeclensionGenerator):
+class RuhStem(DeclensionGenerator):
     def genNominative(self, noun):
         return noun + "\u0d15\u0d7e"
 

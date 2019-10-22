@@ -1,6 +1,6 @@
-from declension.maldecl.SingularDeclensionGenerator import SingularDeclensionGenerator
+from declension.maldecl.DeclensionGenerator import DeclensionGenerator
 
-class AMStem(SingularDeclensionGenerator):
+class AMStem(DeclensionGenerator):
     def genAccusative(self, noun):
         # Replace trailing am with -ttine
         return noun.replace(u"\u0d02", u"\u0d24\u0d4d\u0d24\u0d3f\u0d28\u0d46")

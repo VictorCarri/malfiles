@@ -1,6 +1,6 @@
-from declension.maldecl.SingularDeclensionGenerator import SingularDeclensionGenerator
+from declension.maldecl.DeclensionGenerator import DeclensionGenerator
 
-class DuhStem(SingularDeclensionGenerator):
+class DuhStem(DeclensionGenerator):
     def genNominative(self, noun):
         return noun + "\u0d15\u0d7e"
 
