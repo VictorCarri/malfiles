@@ -148,3 +148,7 @@ class ANStemTests(TestCase):
         declensions = decline(self.noun)
         expectedVal = u"\u0d05\u0d35\u0d30\u0d3e\u0d7d" # /aʋaɾaːl/
         self.assertEqual(declensions["Plural"]["Instrumental"], expectedVal, "Expected {0} as the plural instrumental form, but received {1} instead".format(expectedVal, declensions["Plural"]["Instrumental"]))
+
+class DuhStemTests(TestCase):
+    def setUp(self):
+        self.noun = "\u0d15\u0d3e\u0d1f\u0d4d" # kaːʈə
