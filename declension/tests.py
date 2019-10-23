@@ -151,4 +151,18 @@ class ANStemTests(TestCase):
 
 class DuhStemTests(TestCase):
     def setUp(self):
-        self.noun = "\u0d15\u0d3e\u0d1f\u0d4d" # kaːʈə
+        self.noun = "\u0d15\u0d3e\u0d1f\u0d4d" # /kaːʈə/
+
+    def testSingularNominative(self):
+        declensions = decline(self.noun)
+        self.assertEqual(declensions["Singular"]["Nominative"], self.noun, "A noun should be the same as its singular nominative form.")
+
+    def testSingularAccusative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d46" # /kaːʈːin̪e/
+        self.assertEqual(declensions["Singular"]["Accusative"], exVal, "Expected {0} as the singular accusative form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Accusative"]))
+
+    def testSingularGenitive(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d7b\u0d31\u0d4d\u0d31\u0d46" # /kaːʈːin̪te/
+        self.assertEqual(declensions["Singular"]["Genitive"], exVal, "Expected {0} as the singular genitive form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Genitive"]))

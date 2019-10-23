@@ -10,7 +10,7 @@ def decline(noun):
     }
 
     # Pick a generator based on the noun's shape #
-    #print("decliner: noun = {0}\n\tisANStem = {1}\n\tisAMStem = {2}\n\tisRuhStem = {3}\n\tisDuhStem = {4}".format(noun, isANStem(noun), isAMStem(noun), isRuhStem(noun), isDuhStem(noun)))
+    print("decliner: noun = {0}\n\tisANStem = {1}\n\tisAMStem = {2}\n\tisRuhStem = {3}\n\tisDuhStem = {4}".format(noun, isANStem(noun), isAMStem(noun), isRuhStem(noun), isDuhStem(noun)))
 
     if isANStem(noun):
         decliners["Singular"] = declension.maldecl.singular.ANStem.ANStem()
@@ -51,4 +51,5 @@ def isRuhStem(noun):
     return ord(noun[len(noun)-2]) == 0x0d4d and ord(noun[len(noun)-1]) == 0x0d31
 
 def isDuhStem(noun):
-    return ord(noun[len(noun)-2]) == 0x0d4d and ord(noun[len(noun)-1]) == 0x0d1f
+    #print("isDuhStem: second-last character = {0}, last character = {1}".format(hex(ord(noun[len(noun)-2])), hex(ord(noun[len(noun)-1]))))
+    return ord(noun[len(noun)-2]) == 0x0d1f and ord(noun[len(noun)-1]) == 0x0d4d
