@@ -196,3 +196,8 @@ class DuhStemTests(TestCase):
         declensions = decline(self.noun)
         exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d15\u0d33\u0d46" # /kaːʈəkaɭe/
         self.assertEqual(declensions["Plural"]["Accusative"], exVal, "Expected {0} as the plural accusative form of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Accusative"]))
+
+    def testPluralGenitive(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d15\u0d33\u0d41\u0d1f\u0d46" # /kaːʈəkaɭuʈe/
+        self.assertEqual(declensions["Plural"]["Genitive"], exVal, "Expected {0} as the plural genitive form of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Genitive"]))
