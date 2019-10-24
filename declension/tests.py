@@ -181,3 +181,8 @@ class DuhStemTests(TestCase):
         declensions = decline(self.noun)
         exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d4b\u0d1f\u0d4d" # /kaːʈːin̪oːʈə/
         self.assertEqual(declensions["Singular"]["Sociative"], exVal, "Expected {0} as the singular sociative form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Sociative"]))
+
+    def testSingularInstrumental(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d3e\u0d7d" # /kaːʈːin̪aːl/
+        self.assertEqual(declensions["Singular"]["Instrumental"], exVal, "Expected {0} as the singular instrumental form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Instrumental"]))
