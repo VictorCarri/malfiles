@@ -169,10 +169,15 @@ class DuhStemTests(TestCase):
 
     def testSingularDative(self):
         declensions = decline(self.noun)
-        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d4d\u0d28\u0d4d"
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d4d\u0d28\u0d4d" # /kaːʈːinːə/
         self.assertEqual(declensions["Singular"]["Dative"], exVal, "Expected {0} as the singular dative form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Dative"]))
 
     def testSingularLocative(self):
         declensions = decline(self.noun)
-        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d7d"
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d7d" # /kaːʈːil/
         self.assertEqual(declensions["Singular"]["Locative"], exVal, "Expected {0} as the singular locative form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Locative"]))
+
+    def testSingularSociative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d4b\u0d1f\u0d4d" # /kaːʈːin̪oːʈə/
+        self.assertEqual(declensions["Singular"]["Sociative"], exVal, "Expected {0} as the singular sociative form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Sociative"]))
