@@ -186,3 +186,13 @@ class DuhStemTests(TestCase):
         declensions = decline(self.noun)
         exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d3e\u0d7d" # /kaːʈːin̪aːl/
         self.assertEqual(declensions["Singular"]["Instrumental"], exVal, "Expected {0} as the singular instrumental form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Instrumental"]))
+
+    def testPluralNominative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d15\u0d7e" # /kaːʈəkaɭ/
+        self.assertEqual(declensions["Plural"]["Nominative"], exVal, "Expected {0} as the plural nominative form of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Nominative"]))
+
+    def testPluralAccusative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d15\u0d33\u0d46" # /kaːʈəkaɭe/
+        self.assertEqual(declensions["Plural"]["Accusative"], exVal, "Expected {0} as the plural accusative form of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Accusative"]))
