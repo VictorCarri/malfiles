@@ -240,3 +240,13 @@ class VowelStemTests(TestCase):
         declensions = decline(self.noun)
         exVal = "\u0d24\u0d31\u0d2f\u0d41\u0d1f\u0d46" # /t̪arajuʈe/
         self.assertEqual(declensions["Singular"]["Genitive"], exVal, "Expected {0} as the singular genitive form of {1}, but received {2} instead".format(exVal, self.noun, declensions["Singular"]["Genitive"]))
+
+    def testSingularDative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d24\u0d31\u0d15\u0d4d\u0d15\u0d4d" # /t̪arakːə/
+        self.assertEqual(declensions["Singular"]["Dative"], exVal, "Expected {0} as the singular dative form of {1}, but received {2} instead".format(exVal, self.noun, declensions["Singular"]["Dative"]))
+
+    def testSingularLocative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d24\u0d31\u0d2f\u0d3f\u0d7d" # /t̪arajil/
+        self.assertEqual(declensions["Singular"]["Locative"], exVal, "Expected {0} as the singular locative form of {1}, but received {2} instead".format(exVal, self.noun, declensions["Singular"]["Locative"]))
