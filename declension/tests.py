@@ -211,3 +211,8 @@ class DuhStemTests(TestCase):
         declensions = decline(self.noun)
         exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d15\u0d33\u0d3f\u0d7d" # /kaːʈəkaɭil/
         self.assertEqual(declensions["Plural"]["Locative"], exVal, "Expected {0} as the plural locative form of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Locative"]))
+
+    def testPluralSociative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d15\u0d33\u0d4b\u0d1f\u0d4d" # /kaːʈəkaɭoːʈə/
+        self.assertEqual(declensions["Plural"]["Sociative"], exVal, "Expected {0} as the plural sociative of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Sociative"]))
