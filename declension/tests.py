@@ -258,3 +258,8 @@ class VowelStemTests(TestCase):
         declensions = decline(self.noun)
         exVal = "\u0d24\u0d31\u0d15\u0d7e" # /t̪arakaɭ/
         self.assertEqual(declensions["Plural"]["Nominative"], exVal, "Expected {0} as the plural nominative form of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Nominative"]))
+
+    def testPluralAccusative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d24\u0d31\u0d15\u0d33\u0d46" # /t̪arakaɭe/
+        self.assertEqual(declensions["Plural"]["Accusative"], exVal, "Expected {0} as the accusative plural of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Accusative"]))
