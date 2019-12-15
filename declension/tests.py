@@ -280,3 +280,7 @@ class VowelStemTests(TestCase):
         declensions = decline(self.noun)
         exVal = "\u0d24\u0d31\u0d15\u0d33\u0d3f\u0d7d" # /t̪arakaɭil/
         self.assertEqual(declensions["Plural"]["Locative"], exVal, "Expected {0} as the locative plural of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Locative"]))
+
+    def testPluralSociative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d24\u0d31\u0d15\u0d33\u0d4b\u0d1f\u0d4d" # /t̪arakaɭoːʈə/
