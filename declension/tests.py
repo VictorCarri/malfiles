@@ -1,5 +1,7 @@
 from django.test import TestCase
+
 from declension.maldecl.decline import decline
+
 
 class AMStemTests(TestCase):
     def setUp(self):
@@ -268,3 +270,13 @@ class VowelStemTests(TestCase):
         declensions = decline(self.noun)
         exVal = "\u0d24\u0d31\u0d15\u0d33\u0d41\u0d1f\u0d46" # /t̪arakaɭuʈe/
         self.assertEqual(declensions["Plural"]["Genitive"], exVal, "Expected {0} as the genitive plural of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Genitive"]))
+
+    def testPluralDative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d24\u0d31\u0d15\u0d7e\u0d15\u0d4d\u0d15\u0d4d" # /t̪arakaɭkːə/
+        self.assertEqual(declensions["Plural"]["Dative"], exVal, "Expected {0} as the dative plural of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Dative"]))
+
+    def testPluralLocative(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d24\u0d31\u0d15\u0d33\u0d3f\u0d7d" # /t̪arakaɭil/
+        self.assertEqual(declensions["Plural"]["Locative"], exVal, "Expected {0} as the locative plural of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Locative"]))
