@@ -256,6 +256,11 @@ class VowelStemTests(TestCase):
         exVal = "\u0d24\u0d31\u0d2f\u0d4b\u0d1f\u0d4d" # /t̪arajoːʈə/
         self.assertEqual(declensions["Singular"]["Sociative"], exVal, "Expected {0} as the singular sociative form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Sociative"]))
 
+    def testSingularInstrumental(self):
+        declensions = decline(self.noun)
+        exVal = "\u0d24\u0d31\u0d2f\u0d3e\u0d7d" # /t̪arajaːl/
+        self.assertEqual(declensions["Singular"]["Instrumental"], exVal, "Expected {0} as the singular instrumental form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Instrumental"]))
+
     def testPluralNominative(self):
         declensions = decline(self.noun)
         exVal = "\u0d24\u0d31\u0d15\u0d7e" # /t̪arakaɭ/
