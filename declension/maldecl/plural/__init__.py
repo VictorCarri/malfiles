@@ -1,2 +1,2 @@
 name = "plural"
-from . import AMStem, ANStem, VowelStem
+from . import AMStem, ANStem, DuhStem, RuhStem, VowelStem

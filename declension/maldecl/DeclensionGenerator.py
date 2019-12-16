@@ -1,6 +1,6 @@
 class DeclensionGenerator:
     def genNominative(self, noun):
-        return "Unknown nominative"
+        return noun
 
     def genAccusative(self, noun):
         return "Unknown accusative"
@@ -21,8 +21,8 @@ class DeclensionGenerator:
         return "Unknown instrumental"
 
     def decline(self, noun):
-        return {
-            "Nominative": noun,
+        toReturn = {
+            "Nominative": self.genNominative(noun),
             "Accusative": self.genAccusative(noun),
             "Genitive": self.genGenitive(noun),
             "Dative": self.genDative(noun),
@@ -30,3 +30,5 @@ class DeclensionGenerator:
             "Sociative": self.genSociative(noun),
             "Instrumental": self.genInstrumental(noun)
         }
+        #print("decline: noun = {1}, genNominative returned {0}\n\tClass name = {3}.{2}".format(toReturn["Nominative"], noun, self.__class__.__name__, self.__class__.__module__))
+        return toReturn
