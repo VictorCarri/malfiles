@@ -3,16 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <title>{{noun}}</title>
+    <style type="text/css">
+        table, tr, th, td
+        {
+            border: 1px solid #000000;
+        }
+    </style>
 </head>
 <body>
     <table>
         <tr>
+            <th>
+                Case
+            </th>
             <th>
                 Singular
             </th>
             <th>
                 Plural
             </th>
+        </tr>
+        <tr>
+            <th>
+                Nominative
+            </th>
+            <td>
+                {{declensions.Singular.Nominative}}
+            </td>
+            <td>
+                {{declensions.Plural.Nominative}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Accusative
+            </th>
+            <td>
+                {{declensions.Singular.Accusative}}
+            </td>
+            <td>
+                {{declensions.Plural.Accusative}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Genitive
+            </th>
+            <td>
+                {{declensions.Singular.Genitive}}
+            </td>
+            <td>
+                {{declensions.Plural.Genitive}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Dative
+            </th>
+            <td>
+                {{declensions.Singular.Dative}}
+            </td>
+            <td>
+                {{declensions.Plural.Dative}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Locative
+            </th>
+            <td>
+                {{declensions.Singular.Locative}}
+            </td>
+            <td>
+                {{declensions.Plural.Locative}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Sociative
+            </th>
+            <td>
+                {{declensions.Singular.Sociative}}
+            </td>
+            <td>
+                {{declensions.Plural.Sociative}}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Instrumental
+            </th>
+            <td>
+                {{declensions.Singular.Instrumental}}
+            </td>
+            <td>
+                {{declensions.Plural.Instrumental}}
+            </td>
         </tr>
     </table>
 </body>
