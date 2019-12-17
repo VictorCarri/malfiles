@@ -28,9 +28,9 @@ def decline(noun):
         decliners["Singular"] = declension.maldecl.singular.DuhStem.DuhStem()
         decliners["Plural"] = declension.maldecl.plural.DuhStem.DuhStem()
 
-    elif isAlStem(noun):
+    elif isALStem(noun):
         decliners["Singular"] = declension.maldecl.singular.ALStem.ALStem()
-        #decliners["Plural"] =
+        decliners["Plural"] = declension.maldecl.plural.ALStem.ALStem()
 
     else: # Must be a vowel stem
         decliners["Singular"] = declension.maldecl.singular.VowelStem.VowelStem()
@@ -58,5 +58,5 @@ def isDuhStem(noun):
     #print("isDuhStem: second-last character = {0}, last character = {1}".format(hex(ord(noun[len(noun)-2])), hex(ord(noun[len(noun)-1]))))
     return ord(noun[len(noun)-2]) == 0x0d1f and ord(noun[len(noun)-1]) == 0x0d4d
 
-def isAlStem(noun):
+def isALStem(noun):
     return ord(noun[len(noun)-1]) == 0x0d7e
