@@ -324,3 +324,8 @@ class ALStemTests(TestCase):
         declensions = decline(self.noun)
         eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d33\u0d3f\u0d7d" # /poɾuɭil/
         self.assertEqual(declensions["Singular"]["Locative"], eVal, "Expected {0} as the locative singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Locative"]))
+
+    def testSingularSociative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d33\u0d4b\u0d1f\u0d4d" # /poɾuɭoːʈə/
+        self.assertEqual(declensions["Singular"]["Sociative"], eVal, "Expected {0} as the sociative singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Sociative"]))
