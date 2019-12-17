@@ -298,9 +298,14 @@ class VowelStemTests(TestCase):
 
 class ALStemTests(TestCase):
     def setUp(self) -> None:
-        self.noun = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e" # /poɾul/
+        self.noun = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e" # /poɾuɭ/
 
     def testSingularNominative(self):
         declensions = decline(self.noun)
         eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e" # Should be unchanged
         self.assertEqual(declensions["Singular"]["Nominative"], eVal, "Expected {0} as the nominative singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Nominative"]))
+
+    def testSingularAccusative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d33\u0d46" # /poɾuɭe/
+        self.assertEqual(declensions["Singular"]["Accusative"], eVal, "Expected {0} as the accusative singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Accusative"]))
