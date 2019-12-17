@@ -314,3 +314,8 @@ class ALStemTests(TestCase):
         declensions = decline(self.noun)
         eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d33\u0d41\u0d1f\u0d46" # /poɾuɭuʈe/
         self.assertEqual(declensions["Singular"]["Genitive"], eVal, "Expected {0} as the genitive singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Genitive"]))
+    
+    def testSingularDative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e\u0d15\u0d4d\u0d15\u0d4d" # /poɾuɭkːə/
+        self.assertEqual(declensions["Singular"]["Dative"], eVal, "Expected {0} as the dative singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Dative"]))
