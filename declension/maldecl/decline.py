@@ -53,3 +53,6 @@ def isRuhStem(noun):
 def isDuhStem(noun):
     #print("isDuhStem: second-last character = {0}, last character = {1}".format(hex(ord(noun[len(noun)-2])), hex(ord(noun[len(noun)-1]))))
     return ord(noun[len(noun)-2]) == 0x0d1f and ord(noun[len(noun)-1]) == 0x0d4d
+
+def isAlStem(noun):
+    return ord(noun[len(noun)-1]) == 0x0d7e
