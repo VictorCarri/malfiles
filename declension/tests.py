@@ -295,3 +295,12 @@ class VowelStemTests(TestCase):
         declensions = decline(self.noun)
         exVal = "\u0d24\u0d31\u0d15\u0d33\u0d3e\u0d7d" # /t̪arakaɭaːl/
         self.assertEqual(declensions["Plural"]["Instrumental"], exVal, "Expected {0} as the instrumental plural of {1}, but received {2}".format(exVal, self.noun, declensions["Plural"]["Instrumental"]))
+
+class ALStemTests(TestCase):
+    def setUp(self) -> None:
+        self.noun = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e" # /poɾul/
+
+    def testSingularNominative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e" # Should be unchanged
+        self.assertEqual(declensions["Singular"]["Nominative"], eVal, "Expected {0} as the nominative singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Nominative"]))
