@@ -28,6 +28,10 @@ def decline(noun):
         decliners["Singular"] = declension.maldecl.singular.DuhStem.DuhStem()
         decliners["Plural"] = declension.maldecl.plural.DuhStem.DuhStem()
 
+    elif isAlStem(noun):
+        decliners["Singular"] = declension.maldecl.singular.ALStem.ALStem()
+        #decliners["Plural"] =
+
     else: # Must be a vowel stem
         decliners["Singular"] = declension.maldecl.singular.VowelStem.VowelStem()
         decliners["Plural"] = declension.maldecl.plural.VowelStem.VowelStem()
