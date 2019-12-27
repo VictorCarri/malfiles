@@ -32,6 +32,9 @@ def decline(noun):
         decliners["Singular"] = declension.maldecl.singular.ALStem.ALStem()
         decliners["Plural"] = declension.maldecl.plural.ALStem.ALStem()
 
+    elif stemEndsInSchwa(noun):
+        decliners["Singular"] = declension.maldecl.singular.SchwaStem.SchwaStem()
+
     else: # Must be a vowel stem
         decliners["Singular"] = declension.maldecl.singular.VowelStem.VowelStem()
         decliners["Plural"] = declension.maldecl.plural.VowelStem.VowelStem()
@@ -60,3 +63,6 @@ def isDuhStem(noun):
 
 def isALStem(noun):
     return ord(noun[len(noun)-1]) == 0x0d7e
+
+def stemEndsInSchwa(noun):
+    return ord(noun[len(noun)-1]) == 0x0d4d

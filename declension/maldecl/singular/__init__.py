@@ -1,2 +1,2 @@
 name = "singular"
-from . import AMStem, ANStem, DuhStem, RuhStem, VowelStem, ALStem
+from . import AMStem, ANStem, DuhStem, RuhStem, VowelStem, ALStem, SchwaStem
