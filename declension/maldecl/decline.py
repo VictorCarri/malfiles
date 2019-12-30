@@ -32,8 +32,11 @@ def decline(noun):
         decliners["Singular"] = declension.maldecl.singular.ALStem.ALStem()
         decliners["Plural"] = declension.maldecl.plural.ALStem.ALStem()
 
+    #elif noun == "\u0d05\u0d24\u0d4d": # അത് has a special plural
+
     elif stemEndsInSchwa(noun):
         decliners["Singular"] = declension.maldecl.singular.SchwaStem.SchwaStem()
+        decliners["Plural"] = declension.maldecl.plural.SchwaStem.SchwaStem()
 
     else: # Must be a vowel stem
         decliners["Singular"] = declension.maldecl.singular.VowelStem.VowelStem()
