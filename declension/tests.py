@@ -355,6 +355,11 @@ class ALStemTests(TestCase):
         eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e\u0d15\u0d7e\u0d15\u0d4d\u0d15\u0d4d" # /poɾuɭkaɭkːə/
         self.assertEqual(declensions["Plural"]["Dative"], eVal, "Expected {0} as the dative plural of {1} but received {2}".format(eVal, self.noun, declensions["Plural"]["Dative"]))
 
+    def testPluralLocative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e\u0d15\u0d33\u0d3f\u0d7d" # /poɾuɭkaɭil/
+        self.assertEqual(declensions["Plural"]["Locative"], eVal, "Expected {0} as the locative plural of {1}, but received {2}".format(eVal, self.noun, declensions["Plural"]["Locative"]))
+
 class SchwaStemTests(TestCase):
     def setUp(self):
         self.noun = "\u0d15\u0d24\u0d15\u0d4d" # കതക് (door)
