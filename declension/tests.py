@@ -335,6 +335,26 @@ class ALStemTests(TestCase):
         eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d33\u0d3e\u0d7d" # /poɾuɭaːl/
         self.assertEqual(declensions["Singular"]["Instrumental"], eVal, "Expected {0} as the instrumental singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Instrumental"]))
 
+    def testPluralNominative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e\u0d15\u0d7e"  # /poɾuɭkaɭ/
+        self.assertEqual(declensions["Plural"]["Nominative"], eVal, "Expected {0} as the nominative plural of {1}, but received {2}".format(eVal, self.noun, declensions["Plural"]["Nominative"]))
+
+    def testPluralAccusative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e\u0d15\u0d33\u0d46"  # /poɾuɭkaɭe/
+        self.assertEqual(declensions["Plural"]["Accusative"], eVal, "Expected {0} as the accusative plural of {1}, but received {2}".format(eVal, self.noun, declensions["Plural"]["Accusative"]))
+
+    def testPluralGenitive(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d2a\u0d4a\u0d30\u0d41\u0d7e\u0d15\u0d33\u0d41\u0d1f\u0d46"  # /poɾuɭkaɭuʈe/
+        self.assertEqual(declensions["Plural"]["Genitive"], eVal, "Expected {0} as the genitive plural of {1}, but received {2}".format(eVal, self.noun, declensions["Plural"]["Genitive"]))
+
 class SchwaStemTests(TestCase):
     def setUp(self):
         self.noun = "\u0d15\u0d24\u0d15\u0d4d" # കതക് (door)
+
+    def testSingularNominative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d4d" # /kat̪akə/ (unchanged)
+        self.assertEqual(declensions["Singular"]["Nominative"], eVal, "Expected {0} as the nominative singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Nominative"]))
