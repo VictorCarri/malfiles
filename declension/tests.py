@@ -106,7 +106,7 @@ class ANStemTests(TestCase):
 
     def testSingularSociative(self):
         declensions = decline(self.noun)
-        expectedVal = u"\u0d05\u0d35\u0d28\u0d4b\u0d1f\u0d4d" # /aʋan̪oːʈə/
+        expectedVal = u"\u0d05\u0d35\u0d28\u0d4b\u0d1f\u0d4d" # /aʋan̪̪oːʈə/
         self.assertEqual(declensions["Singular"]["Sociative"], expectedVal, u"Expected {0} as the singular sociative form, but received {1} instead".format(expectedVal, declensions["Singular"]["Sociative"]))
 
     def testSingularInstrumental(self):
@@ -164,7 +164,7 @@ class DuhStemTests(TestCase):
 
     def testSingularGenitive(self):
         declensions = decline(self.noun)
-        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d7b\u0d31\u0d4d\u0d31\u0d46" # /kaːʈːin̪te/
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d4d\u0d31\u0d4d\u0d31\u0d46" # /kaːʈːin̪te/
         self.assertEqual(declensions["Singular"]["Genitive"], exVal, "Expected {0} as the singular genitive form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Genitive"]))
 
     def testSingularDative(self):
@@ -179,12 +179,12 @@ class DuhStemTests(TestCase):
 
     def testSingularSociative(self):
         declensions = decline(self.noun)
-        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d4b\u0d1f\u0d4d" # /kaːʈːin̪oːʈə/
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d4b\u0d1f\u0d4d" # /kaːʈːin̪̪oːʈə/
         self.assertEqual(declensions["Singular"]["Sociative"], exVal, "Expected {0} as the singular sociative form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Sociative"]))
 
     def testSingularInstrumental(self):
         declensions = decline(self.noun)
-        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d3e\u0d7d" # /kaːʈːin̪aːl/
+        exVal = "\u0d15\u0d3e\u0d1f\u0d4d\u0d1f\u0d3f\u0d28\u0d3e\u0d7d" # /kaːʈːin̪̪aːl/
         self.assertEqual(declensions["Singular"]["Instrumental"], exVal, "Expected {0} as the singular instrumental form of {1}, but received {2}".format(exVal, self.noun, declensions["Singular"]["Instrumental"]))
 
     def testPluralNominative(self):
@@ -378,3 +378,13 @@ class SchwaStemTests(TestCase):
         declensions = decline(self.noun)
         eVal = "\u0d15\u0d24\u0d15\u0d4d" # /kat̪akə/ (unchanged)
         self.assertEqual(declensions["Singular"]["Nominative"], eVal, "Expected {0} as the nominative singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Nominative"]))
+
+    def testSingularAccusative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d3f\u0d28\u0d46" # /katakin̪e/
+        self.assertEqual(declensions["Singular"]["Accusative"], eVal, "Expected {0} as the accusative singular of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Accusative"]))
+
+    def testSingularGenitive(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d3f\u0d28\u0d4d\u0d31\u0d4d\u0d31\u0d46" # /katakinte/
+        self.assertEqual(declensions["Singular"]["Genitive"], eVal, "Expected {0} as the singular genitive of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Genitive"]))

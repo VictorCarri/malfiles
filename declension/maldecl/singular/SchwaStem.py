@@ -8,7 +8,7 @@ class SchwaStem(DeclensionGenerator):
         return noun.replace(u"\u0d4d", u"\u0d3f\u0d28\u0d46")
 
     def genGenitive(self, noun):
-        return noun.replace(u"\u0d4d", u"\u0d3f\u0d7b\u0d31\u0d4d\u0d31\u0d46")
+        return noun.replace(u"\u0d4d", u"\u0d3f\u0d28\u0d4d\u0d31\u0d4d\u0d31\u0d46")
 
     def genDative(self, noun):
         return noun.replace(u"\u0d4d", u"\u0d3f\u0d28\u0d4d\u0d28\u0d4d")
