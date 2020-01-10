@@ -388,3 +388,23 @@ class SchwaStemTests(TestCase):
         declensions = decline(self.noun)
         eVal = "\u0d15\u0d24\u0d15\u0d3f\u0d28\u0d4d\u0d31\u0d4d\u0d31\u0d46" # /katakinte/
         self.assertEqual(declensions["Singular"]["Genitive"], eVal, "Expected {0} as the singular genitive of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Genitive"]))
+
+    def testSingularDative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d3f\u0d28\u0d4d\u0d28\u0d4d" # /kat̪akinːə/
+        self.assertEqual(declensions["Singular"]["Dative"], eVal, "Expected {0} as the singular dative of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Dative"]))
+
+    def testSingularLocative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d3f\u0d7d" # /kat̪akil/
+        self.assertEqual(declensions["Singular"]["Locative"], eVal, "Expected {0} as the singular locative of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Locative"]))
+
+    def testSingularSociative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d3f\u0d28\u0d4b\u0d1f\u0d4d" # /kat̪akinoːʈə/
+        self.assertEqual(declensions["Singular"]["Sociative"], eVal, "Expected {0} as the singular sociative of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Sociative"]))
+
+    def testSingularInstrumental(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d3f\u0d28\u0d3e\u0d7d" # /kat̪akinaːl/
+        self.assertEqual(declensions["Singular"]["Instrumental"], eVal, "Expected {0} as the singular instrumental of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Instrumental"]))
