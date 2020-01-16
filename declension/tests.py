@@ -418,3 +418,8 @@ class SchwaStemTests(TestCase):
         declensions = decline(self.noun)
         eVal = "\u0d15\u0d24\u0d15\u0d4d\u0d15\u0d33\u0d46" # /kat̪akəkaɭe/
         self.assertEqual(declensions["Plural"]["Accusative"], eVal, "Expected {0} as the plural accusative of {1}, but received {2}".format(eVal, self.noun, declensions["Plural"]["Accusative"]))
+
+    def testPluralGenitive(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d4d\u0d15\u0d33\u0d41\u0d1f\u0d46" # /kat̪akəkaɭuʈe/
+        self.assertEqual(declensions["Plural"]["Genitive"], eVal, "Expected {0} as the plural genitive of {1}, but received {2}".format(eVal, self.noun, declensions["Plural"]["Genitive"]))
