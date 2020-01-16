@@ -408,3 +408,8 @@ class SchwaStemTests(TestCase):
         declensions = decline(self.noun)
         eVal = "\u0d15\u0d24\u0d15\u0d3f\u0d28\u0d3e\u0d7d" # /kat̪akinaːl/
         self.assertEqual(declensions["Singular"]["Instrumental"], eVal, "Expected {0} as the singular instrumental of {1}, but received {2}".format(eVal, self.noun, declensions["Singular"]["Instrumental"]))
+
+    def testPluralNominative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d4d\u0d15\u0d7e" # /kat̪akəkaɭ/
+        self.assertEqual(declensions["Plural"]["Nominative"], eVal, "Expected {0} as the singular instrumental of {1}, but received {2}".format(eVal, self.noun, declensions["Plural"]["Nominative"]))
