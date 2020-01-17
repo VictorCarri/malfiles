@@ -11,7 +11,7 @@ class SchwaStem(DeclensionGenerator):
         return noun + "\u0d15\u0d33\u0d41\u0d1f\u0d46"
 
     def genDative(self, noun):
-        return noun + "\u0d15\u0d7e\u0d15\u0d4d\u0d15"
+        return noun + "\u0d15\u0d7e\u0d15\u0d4d\u0d15\u0d4d"
 
     def genLocative(self, noun):
         return noun + "\u0d15\u0d33\u0d3f\u0d7d"
