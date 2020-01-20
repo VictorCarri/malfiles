@@ -433,3 +433,13 @@ class SchwaStemTests(TestCase):
         declensions = decline(self.noun)
         eVal = "\u0d15\u0d24\u0d15\u0d4d\u0d15\u0d33\u0d3f\u0d7d" # /kat̪akəkaɭil/
         self.assertEqual(declensions["Plural"]["Locative"], eVal, "Expected {0} as the locative plural of {1}, but received {2}".format(eVal, self.noun, declensions["Plural"]["Locative"]))
+
+    def testPluralSociative(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d4d\u0d15\u0d33\u0d4b\u0d1f\u0d4d" # /kat̪akəkaɭoːʈə/
+        self.assertEqual(declensions["Plural"]["Sociative"], eVal, f"Expected {eVal} as the locative plural of {self.noun}, but received {declensions['Plural']['Sociative']}")
+
+    def testPluralInstrumental(self):
+        declensions = decline(self.noun)
+        eVal = "\u0d15\u0d24\u0d15\u0d4d\u0d15\u0d33\u0d3e\u0d7d" # /kat̪akəkaɭaːl/
+        self.assertEqual(declensions["Plural"]["Instrumental"], eVal, f"Expected {eVal} as the instrumental plural of {self.noun}, but received {declensions['Plural']['Instrumental']} instead.")
